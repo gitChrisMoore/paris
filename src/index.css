@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    input:focus-within~label,
+    input:not(:placeholder-shown)~label {
+        @apply transform scale-75 -translate-y-3;
+        @apply text-violet-900 text-sm font-light
+    }
+
+    input:focus-within~label {
+        @apply text-violet-700;
+    }
+   select:focus-within~label,
+   select:not(:placeholder-shown)~label {
+       @apply transform scale-75 -translate-y-3;
+       @apply text-violet-900 text-sm font-light
+   }
+
+   select:focus-within~label {
+       @apply text-violet-700;
+   }
+    p:animate-wiggle~label {
+        @apply text-violet-700;
+    }
+}

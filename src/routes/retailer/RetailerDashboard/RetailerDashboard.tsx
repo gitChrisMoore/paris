@@ -1,11 +1,13 @@
+import MainLayout from '../../../layouts/MainLayout/MainLayout';
 import AllProducts from '../../product/AllProducts/AllProducts';
 
 const RetailerDashboard = () => {
   return (
     // Snippet
     <>
-      dashboard
-      <AllProducts />
+      <MainLayout>
+        <AllProducts />
+      </MainLayout>
     </>
   );
 };

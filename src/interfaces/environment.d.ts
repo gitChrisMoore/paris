@@ -4,6 +4,7 @@ declare global {
       REACT_APP_SUPABASE_URL: string;
       REACT_APP_SUPABASE_ANON_KEY: string;
       REACT_APP_SUPABASE_PRODUCTS_TBL: string;
+      REACT_APP_SUPABASE_BRANDS_TBL: string;
     }
   }
 }

@@ -8,13 +8,15 @@ const useProducts = () => {
   const { user } = useAuthContext();
 
   const getProducts = async () => {
-    console.log('starting query');
+    // console.log('starting query');
 
-    const { data, error, status } = await supabase.from(tableName).select('*');
-    console.log('getProducts data', data);
-    console.log('getProducts error', error);
-    console.log('getProducts status', status);
+    const { data, error, status } = await supabase
+      .from(tableName)
+      .select('*, devbrands:dev-brands ( name )');
+    // console.log('getProducts error', error);
+    // console.log('getProducts status', status);
     if (data) {
+      console.log('getProducts data', data);
       return data;
     } else {
       return [];
@@ -35,7 +37,7 @@ const useProducts = () => {
   };
 
   const createProduct = async (i: ICreateProductForm) => {
-    console.log(i);
+    console.log('new product: ', i);
 
     const fileExt = i.file.name.split('.').pop();
     const fileName = `${Math.random()}.${fileExt}`;
@@ -48,6 +50,7 @@ const useProducts = () => {
       .from(tableName)
       .insert({
         user_id: user.id,
+        brand_id: i.brand_id,
         title: i.title,
         product_image_url:
           'https://ayqwspxjamntpzpoaoyd.supabase.co/storage/v1/object/public/product_images/' +

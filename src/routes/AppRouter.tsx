@@ -1,9 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
 import Login from './account/Login/Login';
 import Register from './account/Register/Register';
-import AllProducts from './product/AllProducts/AllProducts';
+import AllBrands from './brand/AllBrands/AllBrands';
+import CreateBrand from './brand/CreateBrand/CreateBrand';
 import CreateProduct from './product/CreateProduct/CreateProduct';
 import RetailerDashboard from './retailer/RetailerDashboard/RetailerDashboard';
+import Visitor from './visitor/Visitor';
 
 const AppRouter = () => {
   return (
@@ -17,11 +19,15 @@ const AppRouter = () => {
         {/* Retailer */}
         <Route path="/retailer/retailer-dashboard" element={<RetailerDashboard />} />
 
-        {/* Retailer */}
-        <Route path="/product/create-product" element={<CreateProduct />} />
-        <Route path="/product/all-products" element={<AllProducts />} />
+        {/* Brand */}
+        <Route path="/brand/" element={<AllBrands />} />
+        <Route path="/brand/create" element={<CreateBrand />} />
 
-        {/* Enroll */}
+        {/* Retailer */}
+        <Route path="/product/create" element={<CreateProduct />} />
+
+        {/* Catch All */}
+        <Route path="*" element={<Visitor />} />
       </Routes>
     </>
   );

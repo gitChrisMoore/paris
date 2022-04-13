@@ -1,30 +1,49 @@
 import React, { ReactNode, useContext, useEffect, useState } from 'react';
+import useBrands from '../hooks/useBrands';
 import useProducts from '../hooks/useProducts';
+import { IBrand } from '../interfaces/IBrand';
 import { IProduct } from '../interfaces/IProduct';
 
 export type ProjectContextType = {
   products: IProduct[];
+  brands: IBrand[];
+  fetchProducts: () => void;
+  fetchBrands: () => void;
 };
 
 const ProjectContext = React.createContext<ProjectContextType>({
-  products: []
+  products: [],
+  brands: [],
+  fetchProducts: () => null,
+  fetchBrands: () => null
 });
 
 export const ProjectProvider = ({ children }: { children: ReactNode }) => {
-  const [products, setproducts] = useState<IProduct[]>([]);
+  const [products, setProducts] = useState<IProduct[]>([]);
+  const [brands, setBrands] = useState<IBrand[]>([]);
   const { getProducts } = useProducts();
+  const { getBrands } = useBrands();
 
-  const fetchproducts = async () => {
+  const fetchProducts = async () => {
     const res = await getProducts();
-    setproducts(res);
+    setProducts(res);
+  };
+
+  const fetchBrands = async () => {
+    const res = await getBrands();
+    setBrands(res);
   };
 
   useEffect(() => {
-    fetchproducts();
+    fetchProducts();
+    fetchBrands();
   }, []);
 
   const value = {
-    products
+    products,
+    brands,
+    fetchProducts,
+    fetchBrands
   };
 
   return (

@@ -50,7 +50,7 @@ const MainLayout: FC<Props> = (props) => {
           return <LeftNavDrawerItem key={t.name} title={t.name} to={t.path} />;
         })}
       </LeftNavDrawer>
-      <div className="mx-2">{children}</div>
+      <div className="mx-2 ">{children}</div>
     </>
   );
 };

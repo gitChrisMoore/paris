@@ -19,7 +19,7 @@ const Visitor = () => {
             </BasicButton>
           </div>
           <div className="flex mt-2">
-            <BasicButton variant="outlined-grow" onClick={() => navigate('/account/login')}>
+            <BasicButton variant="outlined-grow" onClick={() => navigate('/visitor/login')}>
               Customer
             </BasicButton>
           </div>

@@ -5,6 +5,8 @@ import AllBrands from './brand/AllBrands/AllBrands';
 import CreateBrand from './brand/CreateBrand/CreateBrand';
 import CreateProduct from './product/CreateProduct/CreateProduct';
 import RetailerDashboard from './retailer/RetailerDashboard/RetailerDashboard';
+import LoginVisitor from './visitor/LoginVisitor';
+import SignupVisitor from './visitor/SignupVisitor';
 import Visitor from './visitor/Visitor';
 
 const AppRouter = () => {
@@ -25,6 +27,10 @@ const AppRouter = () => {
 
         {/* Retailer */}
         <Route path="/product/create" element={<CreateProduct />} />
+
+        {/* Vistor */}
+        <Route path="/visitor/signup" element={<SignupVisitor />} />
+        <Route path="/visitor/login" element={<LoginVisitor />} />
 
         {/* Catch All */}
         <Route path="*" element={<Visitor />} />

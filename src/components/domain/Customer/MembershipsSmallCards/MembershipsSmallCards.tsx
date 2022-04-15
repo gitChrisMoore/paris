@@ -31,7 +31,7 @@ const MembershipsSmallCards = () => {
   }, []);
 
   return (
-    // Snippet
+    // Snippeta
     <>
       <div className="flex flex-wrap gap-2 ">
         {toUI(memberships).map((i) => (

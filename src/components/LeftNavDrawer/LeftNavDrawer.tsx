@@ -11,12 +11,14 @@ const LeftNavDrawer: React.FC<Props> = (props) => {
 
   const divRef = useRef<HTMLDivElement>(null);
 
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   const toggleIsOpen = (e?: any) => {
     e.preventDefault();
     setIsNavOpen(!isNavOpen);
   };
 
   useEffect(() => {
+    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
     const checkIfClickedOutside = (e: any) => {
       if (isNavOpen && divRef.current && !divRef.current.contains(e.target)) {
         toggleIsOpen(e);
@@ -46,7 +48,10 @@ const LeftNavDrawer: React.FC<Props> = (props) => {
         </div>
       </div>
       {/* Modal background */}
-      <div className={` ${isNavOpen ? 'opacity-25 fixed inset-0 z-10 bg-black' : ''} `}></div>
+      <div
+        className={` ${
+          isNavOpen ? 'opacity-25 fixed inset-0 z-10 bg-black' : ''
+        } `}></div>
     </>
   );
 };

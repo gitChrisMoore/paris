@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
+import ProductPictureCards from '../../../components/domain/Product/ProductPictureCards/ProductPictureCards';
 import { useProjectContext } from '../../../contexts/Project';
-import ProductItem from './ProductItem';
+import MainLayout from '../../../layouts/MainLayout/MainLayout';
 
 const AllProducts = () => {
-  const { products, fetchProducts } = useProjectContext();
+  const { fetchProducts } = useProjectContext();
 
   useEffect(() => {
     fetchProducts();
@@ -12,14 +13,11 @@ const AllProducts = () => {
   return (
     // Snippet
     <>
-      <div className="mx-2">
-        <div className="text-lg font-medium my-2">All Products</div>
-        {products.map((i, idx) => (
-          <div key={idx}>
-            <ProductItem product={i} />
-          </div>
-        ))}
-      </div>
+      <MainLayout>
+        <div className="text-lg font-medium mb-2">All Brands</div>
+
+        <ProductPictureCards />
+      </MainLayout>
     </>
   );
 };

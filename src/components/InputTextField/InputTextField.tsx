@@ -6,14 +6,17 @@ interface Props {
   id: string;
   label: string;
   placeholder?: string;
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   field?: any;
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   form?: any;
 }
 
 const InputTextField: React.FC<Props> = (props) => {
   const { id, label, placeholder = '  ', field = {}, form = {} } = props;
 
-  const errorText = getIn(form.touched, field.name) && getIn(form.errors, field.name);
+  const errorText =
+    getIn(form.touched, field.name) && getIn(form.errors, field.name);
 
   return (
     <InputFieldWrapper errorText={errorText} id={id} label={label}>

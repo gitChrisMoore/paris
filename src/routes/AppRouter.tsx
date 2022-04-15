@@ -4,6 +4,7 @@ import Register from './account/Register/Register';
 import AllBrands from './brand/AllBrands/AllBrands';
 import CreateBrand from './brand/CreateBrand/CreateBrand';
 import CreateProduct from './product/CreateProduct/CreateProduct';
+import BrandDashboard from './retailer/Brands/BrandDashboard/BrandDashboard';
 import RetailerDashboard from './retailer/RetailerDashboard/RetailerDashboard';
 import LoginVisitor from './visitor/LoginVisitor';
 import SignupVisitor from './visitor/SignupVisitor';
@@ -19,7 +20,11 @@ const AppRouter = () => {
         <Route path="/account/login" element={<Login />} />
 
         {/* Retailer */}
-        <Route path="/retailer/retailer-dashboard" element={<RetailerDashboard />} />
+        <Route
+          path="/retailer/retailer-dashboard"
+          element={<RetailerDashboard />}
+        />
+        <Route path="/retailer/brands" element={<BrandDashboard />} />
 
         {/* Brand */}
         <Route path="/brand/" element={<AllBrands />} />

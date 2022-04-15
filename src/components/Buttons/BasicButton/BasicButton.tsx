@@ -17,6 +17,8 @@ const BasicButton: FC<Props> = (props) => {
       return 'grow outline outline-1	text-slate-800 ';
     } else if (variant === 'text-grow') {
       return 'grow text-slate-800 ';
+    } else if (variant === 'text-bold') {
+      return 'px-4 text-slate-800 text-sm	font-bold';
     } else if (variant === 'primary-grow') {
       return 'grow bg-slate-800 text-white ';
     } else {
@@ -27,7 +29,10 @@ const BasicButton: FC<Props> = (props) => {
   return (
     // Snippet
     <>
-      <button type={type} className={`px-6 h-10 rounded-full ${handleStyle()}`} {...params}>
+      <button
+        type={type}
+        className={`px-6 h-10 rounded-full ${handleStyle()}`}
+        {...params}>
         {children}
       </button>
     </>

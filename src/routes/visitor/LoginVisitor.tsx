@@ -19,11 +19,14 @@ const LoginVisitor = () => {
     if (error) alert(error.message);
     if (user) {
       console.log('signin customer - success - ', user);
-      navigate('');
+      navigate('/customer/customer-dashboard');
     }
   };
 
-  const { formik } = useSignupForm({ handleSubmit, email: 'customer1@gmail.com' });
+  const { formik } = useSignupForm({
+    handleSubmit,
+    email: 'customer1@gmail.com'
+  });
 
   return (
     <>
@@ -31,8 +34,18 @@ const LoginVisitor = () => {
         <FormSmallCenter title={'Login'}>
           <FormikProvider value={formik}>
             <Form onSubmit={formik.handleSubmit}>
-              <Field id="email" name="email" label={'Email'} component={InputTextField} />
-              <Field id="password" name="password" label={'Password'} component={InputTextField} />
+              <Field
+                id="email"
+                name="email"
+                label={'Email'}
+                component={InputTextField}
+              />
+              <Field
+                id="password"
+                name="password"
+                label={'Password'}
+                component={InputTextField}
+              />
 
               <div className="flex">
                 <BasicButton type="submit" variant="primary-grow">
@@ -40,7 +53,9 @@ const LoginVisitor = () => {
                 </BasicButton>
               </div>
               <div className="flex mt-2">
-                <BasicButton variant="text-grow" onClick={() => navigate('/visitor/signup')}>
+                <BasicButton
+                  variant="text-grow"
+                  onClick={() => navigate('/visitor/signup')}>
                   create an account
                 </BasicButton>
               </div>

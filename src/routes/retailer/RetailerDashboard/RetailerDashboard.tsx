@@ -1,12 +1,12 @@
+import ProductPictureCards from '../../../components/domain/Product/ProductPictureCards/ProductPictureCards';
 import MainLayout from '../../../layouts/MainLayout/MainLayout';
-import AllProducts from '../../product/AllProducts/AllProducts';
 
 const RetailerDashboard = () => {
   return (
     // Snippet
     <>
       <MainLayout>
-        <AllProducts />
+        <ProductPictureCards />
       </MainLayout>
     </>
   );

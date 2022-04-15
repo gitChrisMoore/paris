@@ -1,4 +1,4 @@
-import { FC, ReactNode, useState } from 'react';
+import { FC, ReactNode } from 'react';
 
 interface Props {
   children?: ReactNode;
@@ -17,7 +17,9 @@ const InputFieldWrapper: FC<Props> = (props) => {
                            focus-within:bg-slate-200 focus-within:mb-px focus-within:border-b-2 focus-within:border-violet-500">
         <div className="ml-3 relative grow  mt-2 z-10 ">
           {children}
-          <label htmlFor={id} className="absolute -top-1 -z-1 duration-300 origin-0">
+          <label
+            htmlFor={id}
+            className="absolute -top-1 -z-1 duration-300 origin-0">
             {label}
           </label>
         </div>

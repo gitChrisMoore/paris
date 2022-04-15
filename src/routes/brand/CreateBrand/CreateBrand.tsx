@@ -1,7 +1,6 @@
 import { Field, Form, FormikProvider } from 'formik';
 import { useNavigate } from 'react-router';
 import BasicButton from '../../../components/Buttons/BasicButton/BasicButton';
-import InputSelectField from '../../../components/InputSelectField/InputSelectField';
 import InputTextField from '../../../components/InputTextField/InputTextField';
 import FormSmall from '../../../layouts/Forms/FormSmall';
 import MainLayout from '../../../layouts/MainLayout/MainLayout';
@@ -14,10 +13,17 @@ const CreateBrand = () => {
     // Snippet
     <>
       <MainLayout>
-        <FormSmall title={'New Brand'} subtitle={'Tell us a bit more about the brand'}>
+        <FormSmall
+          title={'New Brand'}
+          subtitle={'Tell us a bit more about the brand'}>
           <FormikProvider value={formik}>
             <Form onSubmit={formik.handleSubmit}>
-              <Field id="name" name="name" label={'Brand Name'} component={InputTextField} />
+              <Field
+                id="name"
+                name="name"
+                label={'Brand Name'}
+                component={InputTextField}
+              />
               <Field
                 id="description"
                 name="description"

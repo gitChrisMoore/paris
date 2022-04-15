@@ -4,12 +4,14 @@ interface Props {
   id: string;
   label: string;
   placeholder?: string;
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   field?: any;
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   form?: any;
 }
 
 const InputFileField: React.FC<Props> = (props) => {
-  const { id, label, placeholder = '  ', field = {}, form = {} } = props;
+  const { id, label, placeholder = '  ', form = {} } = props;
 
   return (
     <div className="form-group py-2">

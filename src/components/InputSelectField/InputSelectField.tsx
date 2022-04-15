@@ -5,15 +5,19 @@ import InputFieldWrapper from '../InputFieldWrapper/InputFieldWrapper';
 interface Props {
   id: string;
   label: string;
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   option_list: any;
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   field?: any;
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   form?: any;
 }
 
 const InputSelectField: React.FC<Props> = (props) => {
   const { id, label, option_list, field = {}, form = {} } = props;
 
-  const errorText = getIn(form.touched, field.name) && getIn(form.errors, field.name);
+  const errorText =
+    getIn(form.touched, field.name) && getIn(form.errors, field.name);
 
   return (
     <InputFieldWrapper errorText={errorText} id={id} label={label}>
@@ -25,6 +29,7 @@ const InputSelectField: React.FC<Props> = (props) => {
         {...field}
         {...props}>
         <option value="apples"></option>
+        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
         {option_list.map((option: any) => (
           <option key={option.id} value={option.id}>
             {option.name}

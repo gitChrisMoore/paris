@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import NavAvatar from '../NavAvatar/NavAvatar';
 import NavButton from '../NavButton/NavButton';
 
 interface Props {

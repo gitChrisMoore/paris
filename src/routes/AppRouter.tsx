@@ -4,8 +4,11 @@ import Login from './account/Login/Login';
 import Register from './account/Register/Register';
 import AllBrands from './brand/AllBrands/AllBrands';
 import CreateBrand from './brand/CreateBrand/CreateBrand';
+import AccountContainer from './customer/Account/AccountContainer';
 import CustomerDashboard from './customer/CustomerDashboard/CustomerDashboard';
 import MembershipOptions from './customer/MembershipOptions/MembershipOptions';
+import ProfileContainer from './customer/Profile/ProfileContainer';
+import ScanContainer from './customer/Scan/ScanContainer';
 import CreateProduct from './product/CreateProduct/CreateProduct';
 import BrandDashboard from './retailer/Brands/BrandDashboard/BrandDashboard';
 import RetailerDashboard from './retailer/RetailerDashboard/RetailerDashboard';
@@ -50,6 +53,9 @@ const AppRouter = () => {
           path="/customer/membership-options"
           element={<MembershipOptions />}
         />
+        <Route path="/customer/account" element={<AccountContainer />} />
+        <Route path="/customer/scan" element={<ScanContainer />} />
+        <Route path="/customer/profile" element={<ProfileContainer />} />
 
         {/* Catch All */}
         <Route path="*" element={<Visitor />} />

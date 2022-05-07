@@ -1,7 +1,9 @@
 import React, { ReactNode, useContext, useEffect, useState } from 'react';
+import useAccounts from '../hooks/useAccounts';
 import useBrands from '../hooks/useBrands';
 import useMemberships from '../hooks/useMembership';
 import useProducts from '../hooks/useProducts';
+import { IAccount } from '../interfaces/IAccount';
 import { IBrand } from '../interfaces/IBrand';
 import { IMembership } from '../interfaces/IMembership';
 import { IProduct } from '../interfaces/IProduct';
@@ -10,18 +12,22 @@ export type ProjectContextType = {
   products: IProduct[];
   brands: IBrand[];
   memberships: IMembership[];
+  accounts: IAccount[];
   fetchProducts: () => void;
   fetchBrands: () => void;
   fetchMemberships: () => void;
+  fetchAccounts: () => void;
 };
 
 const ProjectContext = React.createContext<ProjectContextType>({
   products: [],
   brands: [],
   memberships: [],
+  accounts: [],
   fetchProducts: () => null,
   fetchBrands: () => null,
-  fetchMemberships: () => null
+  fetchMemberships: () => null,
+  fetchAccounts: () => null
 });
 
 export const ProjectProvider = ({ children }: { children: ReactNode }) => {
@@ -31,6 +37,8 @@ export const ProjectProvider = ({ children }: { children: ReactNode }) => {
   const { getBrands } = useBrands();
   const [memberships, setMemberships] = useState<IMembership[]>([]);
   const { getMemberships } = useMemberships();
+  const [accounts, setAccounts] = useState<IAccount[]>([]);
+  const { getAccounts } = useAccounts();
 
   const fetchProducts = async () => {
     const res = await getProducts();
@@ -47,10 +55,16 @@ export const ProjectProvider = ({ children }: { children: ReactNode }) => {
     setMemberships(res);
   };
 
+  const fetchAccounts = async () => {
+    const res = await getAccounts();
+    setAccounts(res);
+  };
+
   useEffect(() => {
     fetchProducts();
     fetchBrands();
     fetchMemberships();
+    fetchAccounts();
   }, []);
 
   const value = {
@@ -59,7 +73,9 @@ export const ProjectProvider = ({ children }: { children: ReactNode }) => {
     brands,
     fetchBrands,
     memberships,
-    fetchMemberships
+    fetchMemberships,
+    accounts,
+    fetchAccounts
   };
 
   return (

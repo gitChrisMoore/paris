@@ -1,19 +1,20 @@
 import BottomNavBar from '../../../components/BottomNavBar/BottomNavBar';
-import OpenAccountCard from '../../../components/domain/Account/OpenAccountCard/OpenAccountCard';
+import VirtualAccountCard from '../../../components/domain/Account/VirtualAccountCard/VirtualAccountCard';
 import useViewport from '../../../hooks/useViewport';
 import MainLayout from '../../../layouts/MainLayout/MainLayout';
 
-const CustomerDashboard = () => {
+const AccountContainer = () => {
   const viewPort = useViewport();
   return (
     // Snippet
     <>
       <MainLayout>
-        <OpenAccountCard />
+        <div className="flex justify-between mt-4">Account</div>
+        <VirtualAccountCard />
         {viewPort.width <= 600 ? <BottomNavBar /> : ''}
       </MainLayout>
     </>
   );
 };
 
-export default CustomerDashboard;
+export default AccountContainer;

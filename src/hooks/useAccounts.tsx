@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { useAuthContext } from '../contexts/Auth';
-import { IBrandFormEdit } from '../interfaces/IBrandFormEdit';
 import { ICreateAccountForm } from '../interfaces/ICreateAccountForm';
-import { ICreateBrandForm } from '../interfaces/ICreateBrandForm';
 import { supabase } from '../utils/storage/supabase';
 
 const tableName = process.env.REACT_APP_SUPABASE_ACCOUNTS_TBL;

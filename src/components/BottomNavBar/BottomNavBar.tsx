@@ -115,19 +115,19 @@ const BottomNavBar = () => {
     },
     {
       label: 'Scan',
-      route: '/app/scan',
+      route: '/customer/scan',
       inactiveIcon: scanPathInactive,
       activeIcon: scanPath
     },
     {
       label: 'Account',
-      route: '/app/account',
+      route: '/customer/account',
       inactiveIcon: accountPathInactive,
       activeIcon: accountPath
     },
     {
       label: 'Profile',
-      route: '/app/profile',
+      route: '/customer/profile',
       inactiveIcon: profilePathInactive,
       activeIcon: userPath
     }

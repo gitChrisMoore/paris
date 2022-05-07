@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useAuthContext } from '../contexts/Auth';
 import { ICreateAccountForm } from '../interfaces/ICreateAccountForm';
 import { supabase } from '../utils/storage/supabase';

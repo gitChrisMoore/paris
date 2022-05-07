@@ -6,7 +6,6 @@ import { supabase } from '../utils/storage/supabase';
 const tableName = process.env.REACT_APP_SUPABASE_ACCOUNTS_TBL;
 
 const useAccounts = () => {
-  const [status, setStatus] = useState('idle');
   const { user } = useAuthContext();
 
   const getAccounts = async () => {
@@ -34,7 +33,7 @@ const useAccounts = () => {
     return data;
   };
 
-  return { status, getAccounts, createAccount };
+  return { getAccounts, createAccount };
 };
 
 export default useAccounts;

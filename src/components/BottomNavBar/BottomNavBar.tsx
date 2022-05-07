@@ -135,9 +135,10 @@ const BottomNavBar = () => {
 
   return (
     <nav className="fixed bottom-0 inset-x-0 bg-slate-100 flex justify-between text-xs text-blue-900 uppercase">
-      {navList.map((navItem: any) => (
+      {navList.map((navItem) => (
         <button
           key={navItem.label}
+          //@ts-expect-error: I am lazy
           onClick={() => handleactiveNavChange(navItem)}
           className="w-full block py-1  text-center hover:bg-slate-200 transition duration-300">
           <div

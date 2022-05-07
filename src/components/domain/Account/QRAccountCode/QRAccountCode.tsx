@@ -27,7 +27,7 @@ const QRAccountCode = () => {
             <QRCode size={150} value={payload} />
           </div>
           <div className="grid py-8 border-t w-full border-slate-300 justify-items-center">
-            <div className="font-light text-xl">$0.00</div>
+            <div className="font-light text-xl">$37.21</div>
           </div>
         </div>
       </div>

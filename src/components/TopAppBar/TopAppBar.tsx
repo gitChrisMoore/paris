@@ -14,7 +14,9 @@ const TopAppBar: FC<Props> = (props) => {
     // Snippet
     <>
       <nav className="sticky top-0 bg-white back h-12	z-20 flex justify-between content-center">
-        <NavButton isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+        <div>
+          <NavButton isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+        </div>
 
         <NavAvatar />
       </nav>

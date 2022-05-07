@@ -10,17 +10,20 @@ const Visitor = () => {
     <>
       <MainLayout type={'brand'}>
         <FormSmall>
-          <div className="flex my-5">
-            <div className="text-lg font-medium mb-2 mx-auto">Choose Experience</div>
+          <div className="text-3xl mt-8">Payments</div>
+          <div className="text-3xl">Made</div>
+          <div className="text-3xl font-bold mb-4">Better</div>
+
+          <div className="text-xl mb-2">
+            A modern payment platform that helps empower companies to change the
+            world.
           </div>
-          <div className="flex mt-2">
-            <BasicButton variant="primary-grow" onClick={() => navigate('/account/login')}>
-              Retailer
-            </BasicButton>
-          </div>
-          <div className="flex mt-2">
-            <BasicButton variant="outlined-grow" onClick={() => navigate('/visitor/login')}>
-              Customer
+
+          <div className="flex mt-12">
+            <BasicButton
+              variant="primary-grow"
+              onClick={() => navigate('/visitor/login')}>
+              Get started
             </BasicButton>
           </div>
         </FormSmall>

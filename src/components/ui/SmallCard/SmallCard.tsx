@@ -19,7 +19,7 @@ const SmallCard: FC<SmallCardProps> = (props) => {
   const { item, onActionClick } = props;
   return (
     <>
-      <div className="bg-slate-100 shadow-md p-4 mb-2 rounded-xl w-full xs:w-100 sm:w-100 md:w-2/5 lg:w-1/3 xl:w-1/4">
+      <div className="bg-slate-100 shadow-md p-4 mb-2 rounded-xl w-full">
         <div className="text-xl font-medium">{item.headline}</div>
         <div>{item.subhead}</div>
         <div>{item.supportingText}</div>

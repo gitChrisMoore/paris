@@ -15,7 +15,11 @@ const QRAccountCode = () => {
   return (
     // Snippet
     <>
-      <QRCode size={200} value={payload} />
+      <div className=" max-w-xs mx-auto">
+        <div className="grid justify-items-center">
+          <QRCode size={150} value={payload} />
+        </div>
+      </div>
     </>
   );
 };

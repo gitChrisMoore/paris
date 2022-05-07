@@ -6,6 +6,7 @@ declare global {
       REACT_APP_SUPABASE_PRODUCTS_TBL: string;
       REACT_APP_SUPABASE_BRANDS_TBL: string;
       REACT_APP_SUPABASE_MEMBERSHIPS_TBL: string;
+      REACT_APP_SUPABASE_ACCOUNTS_TBL: string;
     }
   }
 }

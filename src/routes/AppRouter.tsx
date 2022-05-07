@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import CreateAccount from './account/CreateAccount/CreateAccount';
 import Login from './account/Login/Login';
 import Register from './account/Register/Register';
 import AllBrands from './brand/AllBrands/AllBrands';
@@ -20,6 +21,7 @@ const AppRouter = () => {
         {/* Account */}
         <Route path="/account/register" element={<Register />} />
         <Route path="/account/login" element={<Login />} />
+        <Route path="/account/create" element={<CreateAccount />} />
 
         {/* Retailer */}
         <Route

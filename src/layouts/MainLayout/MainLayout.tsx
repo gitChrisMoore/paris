@@ -23,10 +23,10 @@ const MainLayout: FC<Props> = (props) => {
   ];
 
   const appNavs = [
-    { path: '/asdasd', name: 'Dashboard' },
-    { path: '/visitor/signup', name: 'Scan' },
-    { path: '/visitor/login', name: 'Account' },
-    { path: '/visitor/login', name: 'Profile' }
+    { path: '/customer/customer-dashboard', name: 'Dashboard' },
+    { path: '/customer/account', name: 'Scan' },
+    { path: '/customer/scan', name: 'Account' },
+    { path: '/customer/profile', name: 'Profile' }
   ];
 
   return (

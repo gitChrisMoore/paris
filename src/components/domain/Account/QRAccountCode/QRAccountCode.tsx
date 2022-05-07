@@ -15,9 +15,20 @@ const QRAccountCode = () => {
   return (
     // Snippet
     <>
-      <div className=" max-w-xs mx-auto">
+      <div className="shadow-md mb-2 max-w-xs mx-auto rounded-xl ">
         <div className="grid justify-items-center">
-          <QRCode size={150} value={payload} />
+          <div className="bg-slate-100 p-4 font-light rounded-t-xl w-full">
+            {' '}
+            <div className="grid justify-items-center">
+              Present this code during checkout as payment!{' '}
+            </div>
+          </div>
+          <div className="grid py-8  justify-items-center">
+            <QRCode size={150} value={payload} />
+          </div>
+          <div className="grid py-8 border-t w-full border-slate-300 justify-items-center">
+            <div className="font-light text-xl">$0.00</div>
+          </div>
         </div>
       </div>
     </>
